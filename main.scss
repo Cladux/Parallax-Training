@@ -1,0 +1,137 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto+Condensed:wght@300;400;700&display=swap");
+/* ---- css reset ---- */
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+ul,
+ol {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+img {
+  width: 100%;
+  height: auto;
+}
+/* ---------------- */
+/* ---- css variable ---- */
+:root {
+  --bg-color: #000;
+  --text-color: #fff;
+  --bg-footer-color: #333;
+  --bg-color-light: #fff;
+  --text-light: #000;
+  --bg-footer-color-light: #ccc;
+  --h1-font-size: 3rem;
+  --h2-font-size: 1.5rem;
+  --text-font-size: 0.8rem;
+}
+
+@media (min-width: 768px) {
+  :root {
+    --h1-font-size: 4rem;
+  }
+}
+/* ---------------- */
+/* ---- main ---- */
+body {
+  color: var(--text-color);
+  background-color: var(--bg-color);
+  font-family: "Bebas Neue", cursive;
+  font-family: "Roboto Condensed", sans-serif;
+  .container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  h1 {
+    font-size: var(--h1-font-size);
+  }
+  h2 {
+    font-size: var(--h2-font-size);
+  }
+}
+.transition {
+  transition: all 0.1s ease-in-out;
+}
+/* ---------------- */
+/* ---- header ---- */
+header {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  .hero__header {
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+    &_bg {
+      height: 100vh;
+      display: grid;
+      place-content: center;
+      position: relative;
+      img {
+        @extend .transition;
+      }
+      &_img {
+        object-fit: cover;
+        height: 100vh;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+      }
+      h1 {
+        @extend .transition;
+        font-family: "Bebas Neue", cursive;
+        letter-spacing: 1rem;
+        transform: scale(1, 1.3);
+        text-shadow: 2px 2px rgba(20, 20, 20, 0.5);
+      }
+    }
+    &_object {
+      @extend .transition;
+      width: 80%;
+      position: absolute;
+      bottom: -230px;
+    }
+  }
+}
+/* ---------------- */
+/* ---- responsive ---- */
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1320px;
+  }
+}
+/* ---------------- */
+.scroll__test {
+  width: 1px;
+  height: 4000px;
+}
