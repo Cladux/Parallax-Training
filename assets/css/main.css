@@ -63,10 +63,7 @@ body h2 {
   font-size: var(--h2-font-size);
 }
 
-.transition,
-header .hero__header_object,
-header .hero__header_bg h1,
-header .hero__header_bg img {
+.transition, header .hero__header_object, header .hero__header_bg h1, header .hero__header_bg_img {
   transition: all 0.1s ease-in-out;
 }
 
@@ -90,7 +87,7 @@ header .hero__header_bg {
 }
 header .hero__header_bg_img {
   -o-object-fit: cover;
-  object-fit: cover;
+     object-fit: cover;
   height: 100vh;
   position: absolute;
   top: 0;
@@ -98,16 +95,22 @@ header .hero__header_bg_img {
   z-index: -1;
 }
 header .hero__header_bg h1 {
+  text-align: center;
   font-family: "Bebas Neue", cursive;
   letter-spacing: 1rem;
   -webkit-transform: scale(1, 1.3);
-  transform: scale(1, 1.3);
+          transform: scale(1, 1.3);
   text-shadow: 2px 2px rgba(20, 20, 20, 0.5);
 }
 header .hero__header_object {
   width: 80%;
   position: absolute;
-  bottom: -230px;
+  bottom: -5px;
+}
+
+main {
+  position: fixed;
+  z-index: -1;
 }
 
 /* ---------------- */
@@ -121,10 +124,16 @@ header .hero__header_object {
   .container {
     max-width: 720px;
   }
+  header .hero__header_object {
+    bottom: -100px;
+  }
 }
 @media (min-width: 992px) {
   .container {
     max-width: 960px;
+  }
+  header .hero__header_object {
+    bottom: -180px;
   }
 }
 @media (min-width: 1200px) {
@@ -136,9 +145,12 @@ header .hero__header_object {
   .container {
     max-width: 1320px;
   }
+  header .hero__header_object {
+    bottom: -200px;
+  }
 }
 /* ---------------- */
 .scroll__test {
   width: 1px;
   height: 4000px;
-} /*# sourceMappingURL=main.css.map */
+}/*# sourceMappingURL=main.css.map */
