@@ -45,14 +45,16 @@ button {
   --body-font: "Roboto Condensed", sans-serif;
   --title-font: "Bebas Neue", cursive;
   --h1-font-size: 3rem;
-  --h2-font-size: 1.8rem;
-  --h3-font-size: 1.5rem;
+  --h2-font-size: 2.5rem;
+  --h3-font-size: 1rem;
   --text-font-size: 0.8rem;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   :root {
     --h1-font-size: 4rem;
+    --h2-font-size: 1.8rem;
+    --h3-font-size: 1.5rem;
   }
 }
 /* ---------------- */
@@ -130,7 +132,7 @@ header .hero__header_object {
 main {
   transition: all 0.5s ease-in-out;
   width: 100%;
-  position: unset;
+  position: fixed;
 }
 main .main__nav {
   display: flex;
@@ -291,7 +293,8 @@ main .main__section__title_more_info_button:hover {
 }
 main .main__section__hover {
   display: flex;
-  height: 400px;
+  flex-direction: column;
+  height: 200px;
   gap: 20px;
 }
 main .main__section__hover_card {
@@ -314,7 +317,7 @@ main .main__section__hover_card_title h3 {
   -webkit-transform: rotate(-90deg);
           transform: rotate(-90deg);
   font-family: var(--body-font);
-  font-size: var(--h2-font-size);
+  font-size: var(--h3-font-size);
   font-weight: 400;
   letter-spacing: 1px;
   height: 80px;
@@ -325,7 +328,7 @@ main .main__section__hover_card_title > div {
   flex-direction: column;
 }
 main .main__section__hover_card_title > div p:nth-child(1) {
-  font-size: var(--h2-font-size);
+  font-size: var(--h3-font-size);
 }
 main .main__section__hover img {
   -o-object-fit: cover;
@@ -337,70 +340,19 @@ main .main__section__hover img {
   top: 0;
   border-radius: 1rem;
 }
-main .main__section .hover_card--active-1 .main__section__hover_card:nth-child(1) {
+main .main__section .hover_card--active {
   width: 300px;
 }
-main .main__section .hover_card--active-1 .main__section__hover_card:nth-child(1) .main__section__hover_card_title:hover {
+main .main__section .hover_card--active .main__section__hover_card_title:hover {
   background-color: rgba(255, 255, 255, 0.2);
   border-radius: 0 0 1rem 1rem;
 }
-main .main__section .hover_card--active-1 .main__section__hover_card:nth-child(1) .main__section__hover_card_title h3 {
+main .main__section .hover_card--active .main__section__hover_card_title h3 {
   -webkit-transform: rotate(0);
           transform: rotate(0);
   height: auto;
 }
-main .main__section .hover_card--active-1 .main__section__hover_card:nth-child(1) .main__section__hover_card_title > div {
-  display: flex;
-  -webkit-animation: 0.8s ease-in 1 normal forwards showTopic;
-          animation: 0.8s ease-in 1 normal forwards showTopic;
-}
-main .main__section .hover_card--active-2 .main__section__hover_card:nth-child(2) {
-  width: 300px;
-}
-main .main__section .hover_card--active-2 .main__section__hover_card:nth-child(2) .main__section__hover_card_title:hover {
-  background-color: rgba(255, 255, 255, 0.2);
-  border-radius: 0 0 1rem 1rem;
-}
-main .main__section .hover_card--active-2 .main__section__hover_card:nth-child(2) .main__section__hover_card_title h3 {
-  -webkit-transform: rotate(0);
-          transform: rotate(0);
-  height: auto;
-}
-main .main__section .hover_card--active-2 .main__section__hover_card:nth-child(2) .main__section__hover_card_title > div {
-  display: flex;
-  -webkit-animation: 0.8s ease-in 1 normal forwards showTopic;
-          animation: 0.8s ease-in 1 normal forwards showTopic;
-}
-main .main__section .hover_card--active-3 .main__section__hover_card:nth-child(3) {
-  width: 300px;
-}
-main .main__section .hover_card--active-3 .main__section__hover_card:nth-child(3) .main__section__hover_card_title:hover {
-  background-color: rgba(255, 255, 255, 0.2);
-  border-radius: 0 0 1rem 1rem;
-}
-main .main__section .hover_card--active-3 .main__section__hover_card:nth-child(3) .main__section__hover_card_title h3 {
-  -webkit-transform: rotate(0);
-          transform: rotate(0);
-  height: auto;
-}
-main .main__section .hover_card--active-3 .main__section__hover_card:nth-child(3) .main__section__hover_card_title > div {
-  display: flex;
-  -webkit-animation: 0.8s ease-in 1 normal forwards showTopic;
-          animation: 0.8s ease-in 1 normal forwards showTopic;
-}
-main .main__section .hover_card--active-4 .main__section__hover_card:nth-child(4) {
-  width: 300px;
-}
-main .main__section .hover_card--active-4 .main__section__hover_card:nth-child(4) .main__section__hover_card_title:hover {
-  background-color: rgba(255, 255, 255, 0.2);
-  border-radius: 0 0 1rem 1rem;
-}
-main .main__section .hover_card--active-4 .main__section__hover_card:nth-child(4) .main__section__hover_card_title h3 {
-  -webkit-transform: rotate(0);
-          transform: rotate(0);
-  height: auto;
-}
-main .main__section .hover_card--active-4 .main__section__hover_card:nth-child(4) .main__section__hover_card_title > div {
+main .main__section .hover_card--active .main__section__hover_card_title > div {
   display: flex;
   -webkit-animation: 0.8s ease-in 1 normal forwards showTopic;
           animation: 0.8s ease-in 1 normal forwards showTopic;
@@ -437,6 +389,9 @@ main .main__section .hover_card--active-4 .main__section__hover_card:nth-child(4
   header .hero__header_object {
     bottom: -100px;
   }
+  main .main__section__hover {
+    flex-direction: row;
+  }
 }
 @media (min-width: 992px) {
   .container {
@@ -444,9 +399,6 @@ main .main__section .hover_card--active-4 .main__section__hover_card:nth-child(4
   }
   header .hero__header_object {
     bottom: -180px;
-  }
-  main {
-    position: fixed;
   }
   main .main__nav_menu {
     flex-direction: row;
@@ -473,6 +425,9 @@ main .main__section .hover_card--active-4 .main__section__hover_card:nth-child(4
   main .main__section {
     grid-template-columns: 1fr 2fr;
     grid-row: 1fr;
+  }
+  main .main__section__hover {
+    height: 400px;
   }
 }
 @media (min-width: 1200px) {
