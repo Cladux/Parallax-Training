@@ -40,13 +40,15 @@ button {
   --body-font: "Roboto Condensed", sans-serif;
   --title-font: "Bebas Neue", cursive;
   --h1-font-size: 3rem;
-  --h2-font-size: 1.8rem;
-  --h3-font-size: 1.5rem;
+  --h2-font-size: 2.5rem;
+  --h3-font-size: 1rem;
   --text-font-size: 0.8rem;
 }
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   :root {
     --h1-font-size: 4rem;
+    --h2-font-size: 1.8rem;
+    --h3-font-size: 1.5rem;
   }
 }
 /* ---------------- */
@@ -127,7 +129,7 @@ header {
 main {
   transition: all 0.5s ease-in-out;
   width: 100%;
-  position: unset;
+  position: fixed;
   .main {
     &__nav {
       display: flex;
@@ -229,7 +231,6 @@ main {
       display: grid;
       grid-template-columns: 1fr;
       grid-row: 1fr;
-      // grid-template-rows: 80vh;
       justify-items: center;
       align-items: center;
       height: 80vh;
@@ -269,7 +270,8 @@ main {
       }
       &__hover {
         display: flex;
-        height: 400px;
+        flex-direction: column;
+        height: 200px;
         gap: 20px;
         &_card {
           @extend .transition--long;
@@ -291,7 +293,7 @@ main {
               @extend .transition--long;
               transform: rotate(-90deg);
               font-family: var(--body-font);
-              font-size: var(--h2-font-size);
+              font-size: var(--h3-font-size);
               font-weight: 400;
               letter-spacing: 1px;
               height: 80px;
@@ -301,7 +303,7 @@ main {
               display: none;
               flex-direction: column;
               p:nth-child(1) {
-                font-size: var(--h2-font-size);
+                font-size: var(--h3-font-size);
               }
             }
           }
@@ -317,79 +319,20 @@ main {
         }
       }
 
-      .hover_card--active-1 {
-        .main__section__hover_card:nth-child(1) {
-          width: 300px;
-          .main__section__hover_card_title {
-            &:hover {
-              background-color: rgba(255, 255, 255, 0.2);
-              border-radius: 0 0 1rem 1rem;
-            }
-            h3 {
-              transform: rotate(0);
-              height: auto;
-            }
-            & > div {
-              display: flex;
-              animation: 0.8s ease-in 1 normal forwards showTopic;
-            }
+      .hover_card--active {
+        width: 300px;
+        .main__section__hover_card_title {
+          &:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 0 0 1rem 1rem;
           }
-        }
-      }
-      .hover_card--active-2 {
-        .main__section__hover_card:nth-child(2) {
-          width: 300px;
-          .main__section__hover_card_title {
-            &:hover {
-              background-color: rgba(255, 255, 255, 0.2);
-              border-radius: 0 0 1rem 1rem;
-            }
-            h3 {
-              transform: rotate(0);
-              height: auto;
-            }
-            & > div {
-              display: flex;
-              animation: 0.8s ease-in 1 normal forwards showTopic;
-            }
+          h3 {
+            transform: rotate(0);
+            height: auto;
           }
-        }
-      }
-      .hover_card--active-3 {
-        .main__section__hover_card:nth-child(3) {
-          width: 300px;
-          .main__section__hover_card_title {
-            &:hover {
-              background-color: rgba(255, 255, 255, 0.2);
-              border-radius: 0 0 1rem 1rem;
-            }
-            h3 {
-              transform: rotate(0);
-              height: auto;
-            }
-            & > div {
-              display: flex;
-              animation: 0.8s ease-in 1 normal forwards showTopic;
-            }
-          }
-        }
-      }
-      .hover_card--active-4 {
-        .main__section__hover_card:nth-child(4) {
-          width: 300px;
-          .main__section__hover_card_title {
-            &:hover {
-              background-color: rgba(255, 255, 255, 0.2);
-              border-radius: 0 0 1rem 1rem;
-            }
-            h3 {
-              transform: rotate(0);
-              height: auto;
-            }
-            & > div {
-              display: flex;
-              animation: 0.8s ease-in 1 normal forwards showTopic;
-            }
+          & > div {
+            display: flex;
+            animation: 0.8s ease-in 1 normal forwards showTopic;
           }
         }
       }
@@ -423,6 +366,15 @@ main {
       }
     }
   }
+  main {
+    .main {
+      &__section {
+        &__hover {
+          flex-direction: row;
+        }
+      }
+    }
+  }
 }
 @media (min-width: 992px) {
   .container {
@@ -436,7 +388,6 @@ main {
     }
   }
   main {
-    position: fixed;
     .main {
       &__nav {
         &_menu {
@@ -465,6 +416,9 @@ main {
       &__section {
         grid-template-columns: 1fr 2fr;
         grid-row: 1fr;
+        &__hover {
+          height: 400px;
+        }
       }
     }
   }

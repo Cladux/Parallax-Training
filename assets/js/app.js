@@ -56,20 +56,21 @@ const cardItem = document.querySelectorAll(".main__section__hover_card");
 /* ---------------------- */
 cardItem.forEach((items, index) =>
   items.addEventListener("mouseover", function () {
-    const x = index + 1;
-    cardWrapper.classList.remove("hover_card--active-2");
-    cardWrapper.classList.add(`hover_card--active-${x}`);
+    cardItem[1].classList.remove("hover_card--active");
+    cardItem[index].classList.remove("hover_card--active");
+    cardItem[index].classList.add("hover_card--active");
   })
 );
 cardItem.forEach((items, index) =>
   items.addEventListener("mouseout", () => {
-    const x = index + 1;
-    if (x == 2) {
-      cardWrapper.classList.add("hover_card--active-2");
+    if (index == 1) {
+      cardItem[index].classList.add("hover_card--active");
     } else {
-      cardWrapper.classList.add("hover_card--active-2");
-      cardWrapper.classList.remove(`hover_card--active-${x}`);
+      cardItem[1].classList.add("hover_card--active");
+      cardItem[index].classList.add("hover_card--active");
+      cardItem[index].classList.remove("hover_card--active");
     }
   })
 );
+
 /* ----------------------------------------- */
