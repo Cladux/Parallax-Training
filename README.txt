@@ -1,4 +1,4 @@
-this site right with HTML Sass and vanilla JavaScript.
+this site made with HTML Sass and vanilla JavaScript.
 This site is only training project to prove myself.
 
 if you have any idea to make This Project better pls contact with me.
