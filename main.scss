@@ -39,7 +39,7 @@ button {
   /* -- fonts -- */
   --body-font: "Roboto Condensed", sans-serif;
   --title-font: "Bebas Neue", cursive;
-  --h1-font-size: 3rem;
+  --h1-font-size: 2.2rem;
   --h2-font-size: 2.5rem;
   --h3-font-size: 1rem;
   --text-font-size: 0.8rem;
@@ -74,7 +74,7 @@ body {
   transition: all 0.1s ease-in-out;
 }
 .transition--long {
-  transition: all 0.8s ease;
+  transition: all 0.3s ease;
 }
 @mixin center($dir: row) {
   display: flex;
@@ -130,6 +130,7 @@ main {
   transition: all 0.5s ease-in-out;
   width: 100%;
   position: fixed;
+
   .main {
     &__nav {
       display: flex;
@@ -233,9 +234,11 @@ main {
       grid-row: 1fr;
       justify-items: center;
       align-items: center;
+      justify-content: center;
       height: 80vh;
       &__title {
         @include center(column);
+        gap: 40px;
         align-items: flex-start;
         h3 {
           font-size: var(--h1-font-size);
@@ -244,9 +247,10 @@ main {
         &_more_info {
           @include center;
           justify-content: space-between;
-          width: 20rem;
+          align-self: center;
+          width: 15rem;
           height: 4rem;
-          margin: 40px 0;
+          margin: 0;
           background-color: var(--secondary-color);
           div {
             @include center;
@@ -270,12 +274,12 @@ main {
       }
       &__hover {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         height: 200px;
-        gap: 20px;
+        gap: 10px;
         &_card {
           @extend .transition--long;
-          width: 100px;
+          width: 80px;
           border-radius: 0.8rem;
           display: flex;
           align-items: flex-end;
@@ -318,21 +322,11 @@ main {
           border-radius: 1rem;
         }
       }
-
       .hover_card--active {
-        width: 300px;
         .main__section__hover_card_title {
           &:hover {
-            background-color: rgba(255, 255, 255, 0.2);
+            background-color: rgba(0, 0, 0, 0.4);
             border-radius: 0 0 1rem 1rem;
-          }
-          h3 {
-            transform: rotate(0);
-            height: auto;
-          }
-          & > div {
-            display: flex;
-            animation: 0.8s ease-in 1 normal forwards showTopic;
           }
         }
       }
@@ -354,6 +348,18 @@ main {
     max-width: 540px;
     padding: 0;
   }
+  main {
+    .main {
+      &__section {
+        &__hover {
+          gap: 20px;
+          &_card {
+            width: 100px;
+          }
+        }
+      }
+    }
+  }
 }
 @media (min-width: 768px) {
   .container {
@@ -368,9 +374,17 @@ main {
   }
   main {
     .main {
-      &__section {
-        &__hover {
-          flex-direction: row;
+      .hover_card--active {
+        width: 300px;
+        .main__section__hover_card_title {
+          h3 {
+            transform: rotate(0);
+            height: auto;
+          }
+          & > div {
+            display: flex;
+            animation: 0.4s linear 1 normal forwards showTopic;
+          }
         }
       }
     }
@@ -416,6 +430,14 @@ main {
       &__section {
         grid-template-columns: 1fr 2fr;
         grid-row: 1fr;
+        &__title {
+          @include center(column);
+          align-items: flex-start;
+          &_more_info {
+            width: 15rem;
+            height: 4rem;
+          }
+        }
         &__hover {
           height: 400px;
         }
@@ -426,6 +448,18 @@ main {
 @media (min-width: 1200px) {
   .container {
     max-width: 1140px;
+  }
+  main {
+    .main {
+      &__section {
+        &__title {
+          &_more_info {
+            width: 22rem;
+            height: 4rem;
+          }
+        }
+      }
+    }
   }
 }
 @media (min-width: 1400px) {
