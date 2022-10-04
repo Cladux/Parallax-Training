@@ -44,7 +44,7 @@ button {
   /* -- fonts -- */
   --body-font: "Roboto Condensed", sans-serif;
   --title-font: "Bebas Neue", cursive;
-  --h1-font-size: 3rem;
+  --h1-font-size: 2.2rem;
   --h2-font-size: 2.5rem;
   --h3-font-size: 1rem;
   --text-font-size: 0.8rem;
@@ -82,7 +82,7 @@ body h2 {
 }
 
 .transition--long, main .main__section__hover_card_title h3, main .main__section__hover_card {
-  transition: all 0.8s ease;
+  transition: all 0.3s ease;
 }
 
 /* ---------------- */
@@ -244,6 +244,7 @@ main .main__section {
   grid-row: 1fr;
   justify-items: center;
   align-items: center;
+  justify-content: center;
   height: 80vh;
 }
 main .main__section__title {
@@ -251,6 +252,7 @@ main .main__section__title {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  gap: 40px;
   align-items: flex-start;
 }
 main .main__section__title h3 {
@@ -263,9 +265,10 @@ main .main__section__title_more_info {
   align-items: center;
   flex-direction: row;
   justify-content: space-between;
-  width: 20rem;
+  align-self: center;
+  width: 15rem;
   height: 4rem;
-  margin: 40px 0;
+  margin: 0;
   background-color: var(--secondary-color);
 }
 main .main__section__title_more_info div {
@@ -293,12 +296,12 @@ main .main__section__title_more_info_button:hover {
 }
 main .main__section__hover {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   height: 200px;
-  gap: 20px;
+  gap: 10px;
 }
 main .main__section__hover_card {
-  width: 100px;
+  width: 80px;
   border-radius: 0.8rem;
   display: flex;
   align-items: flex-end;
@@ -340,22 +343,9 @@ main .main__section__hover img {
   top: 0;
   border-radius: 1rem;
 }
-main .main__section .hover_card--active {
-  width: 300px;
-}
 main .main__section .hover_card--active .main__section__hover_card_title:hover {
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(0, 0, 0, 0.4);
   border-radius: 0 0 1rem 1rem;
-}
-main .main__section .hover_card--active .main__section__hover_card_title h3 {
-  -webkit-transform: rotate(0);
-          transform: rotate(0);
-  height: auto;
-}
-main .main__section .hover_card--active .main__section__hover_card_title > div {
-  display: flex;
-  -webkit-animation: 0.8s ease-in 1 normal forwards showTopic;
-          animation: 0.8s ease-in 1 normal forwards showTopic;
 }
 @-webkit-keyframes showTopic {
   from {
@@ -381,6 +371,12 @@ main .main__section .hover_card--active .main__section__hover_card_title > div {
     max-width: 540px;
     padding: 0;
   }
+  main .main__section__hover {
+    gap: 20px;
+  }
+  main .main__section__hover_card {
+    width: 100px;
+  }
 }
 @media (min-width: 768px) {
   .container {
@@ -389,8 +385,18 @@ main .main__section .hover_card--active .main__section__hover_card_title > div {
   header .hero__header_object {
     bottom: -100px;
   }
-  main .main__section__hover {
-    flex-direction: row;
+  main .main .hover_card--active {
+    width: 300px;
+  }
+  main .main .hover_card--active .main__section__hover_card_title h3 {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+    height: auto;
+  }
+  main .main .hover_card--active .main__section__hover_card_title > div {
+    display: flex;
+    -webkit-animation: 0.4s linear 1 normal forwards showTopic;
+            animation: 0.4s linear 1 normal forwards showTopic;
   }
 }
 @media (min-width: 992px) {
@@ -426,6 +432,17 @@ main .main__section .hover_card--active .main__section__hover_card_title > div {
     grid-template-columns: 1fr 2fr;
     grid-row: 1fr;
   }
+  main .main__section__title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  main .main__section__title_more_info {
+    width: 15rem;
+    height: 4rem;
+  }
   main .main__section__hover {
     height: 400px;
   }
@@ -433,6 +450,10 @@ main .main__section .hover_card--active .main__section__hover_card_title > div {
 @media (min-width: 1200px) {
   .container {
     max-width: 1140px;
+  }
+  main .main__section__title_more_info {
+    width: 22rem;
+    height: 4rem;
   }
 }
 @media (min-width: 1400px) {
