@@ -18,7 +18,7 @@ You don't need anything to install for run this project, Just open index.html
 
 ## Authors
 
-- **Seyed Soroush sharifi** - _Initial work_ - Soroush sharifi
+- **Seyed Soroush sharifi**
 
 ## License
 
