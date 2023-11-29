@@ -105,8 +105,7 @@ header .hero__header_bg {
   position: relative;
 }
 header .hero__header_bg_img {
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   height: 100vh;
   position: absolute;
   top: 0;
@@ -117,8 +116,7 @@ header .hero__header_bg h1 {
   text-align: center;
   font-family: "Bebas Neue", cursive;
   letter-spacing: 1rem;
-  -webkit-transform: scale(1, 1.3);
-          transform: scale(1, 1.3);
+  transform: scale(1, 1.3);
   text-shadow: 2px 2px rgba(20, 20, 20, 0.5);
 }
 header .hero__header_object {
@@ -139,7 +137,7 @@ main .main__nav {
   justify-content: space-between;
   align-items: center;
   padding: 40px 0px;
-  height: 20vh;
+  height: 30%;
   z-index: 99;
 }
 main .main__nav #main__logo {
@@ -155,7 +153,7 @@ main .main__nav_menu {
   position: fixed;
   left: -100%;
   width: 100%;
-  top: 20vh;
+  top: 30%;
   text-align: center;
   transition: left 0.3s;
   background-color: var(--bg-color);
@@ -223,20 +221,16 @@ main .main__nav .burger__menu_button .bar {
   height: 0.2rem;
   margin: 5px auto;
   background-color: var(--text-color);
-  transition: -webkit-transform 0.3s ease-in-out;
   transition: transform 0.3s ease-in-out;
-  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
 }
 main .main__nav .burger--active .bar:nth-child(2) {
   opacity: 0;
 }
 main .main__nav .burger--active .bar:nth-child(1) {
-  -webkit-transform: translateY(8px) rotate(45deg);
-          transform: translateY(8px) rotate(45deg);
+  transform: translateY(8px) rotate(45deg);
 }
 main .main__nav .burger--active .bar:nth-child(3) {
-  -webkit-transform: translateY(-8px) rotate(-45deg);
-          transform: translateY(-8px) rotate(-45deg);
+  transform: translateY(-8px) rotate(-45deg);
 }
 main .main__section {
   display: grid;
@@ -291,8 +285,7 @@ main .main__section__title_more_info_button {
   cursor: pointer;
 }
 main .main__section__title_more_info_button:hover {
-  -webkit-filter: brightness(80%);
-          filter: brightness(80%);
+  filter: brightness(80%);
 }
 main .main__section__hover {
   display: flex;
@@ -317,8 +310,7 @@ main .main__section__hover_card_title {
   width: 100%;
 }
 main .main__section__hover_card_title h3 {
-  -webkit-transform: rotate(-90deg);
-          transform: rotate(-90deg);
+  transform: rotate(-90deg);
   font-family: var(--body-font);
   font-size: var(--h3-font-size);
   font-weight: 400;
@@ -334,8 +326,7 @@ main .main__section__hover_card_title > div p:nth-child(1) {
   font-size: var(--h3-font-size);
 }
 main .main__section__hover img {
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   height: 100%;
   z-index: -1;
   position: absolute;
@@ -346,14 +337,6 @@ main .main__section__hover img {
 main .main__section .hover_card--active .main__section__hover_card_title:hover {
   background-color: rgba(0, 0, 0, 0.4);
   border-radius: 0 0 1rem 1rem;
-}
-@-webkit-keyframes showTopic {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
 }
 @keyframes showTopic {
   from {
@@ -389,14 +372,12 @@ main .main__section .hover_card--active .main__section__hover_card_title:hover {
     width: 300px;
   }
   main .main .hover_card--active .main__section__hover_card_title h3 {
-    -webkit-transform: rotate(0);
-            transform: rotate(0);
+    transform: rotate(0);
     height: auto;
   }
   main .main .hover_card--active .main__section__hover_card_title > div {
     display: flex;
-    -webkit-animation: 0.4s linear 1 normal forwards showTopic;
-            animation: 0.4s linear 1 normal forwards showTopic;
+    animation: 0.4s linear 1 normal forwards showTopic;
   }
 }
 @media (min-width: 992px) {
@@ -468,4 +449,4 @@ main .main__section .hover_card--active .main__section__hover_card_title:hover {
 .scroll__active {
   width: 1px;
   height: 4000px;
-}/*# sourceMappingURL=main.css.map */
+}
